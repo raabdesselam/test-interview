@@ -1,5 +1,5 @@
 
-name := "dispatch-interview-code-test"
+name := "dispatch-interview-coding-test"
 
 version := "0.1"
 
