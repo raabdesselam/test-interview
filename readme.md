@@ -5,13 +5,13 @@ Integration with the asset and email sending are handled by third parties via ht
 
 ## Asset dispatch interface
 
-POST to /dispatch/<assetId>/<durationInSeconds> 
+`POST to /dispatch/<assetId>/<durationInSeconds>` 
 where assetId is an int and durationInSeconds is how long to dispatch for in seconds
 returns 200 OK if accepted, 400 otherwise
 
 ## Email notification interface
 
-POST to /email with json body {"contact" : {"email" : "<emailaddress>"}, "content" : "<textOfEmail>" }
+`POST to /email` with json body `{"contact" : {"email" : "<emailaddress>"}, "content" : "<textOfEmail>" }`
 where emailaddress is email of contact and textOfEmail is email content
 returns 200 OK if accepted, 400 otherwise
 
