@@ -15,17 +15,17 @@ import org.http4s.{HttpRoutes, Request, Status, Uri}
 
 case class Contact(email: String)
 object Contact {
-  implicit val codec: Codec[Contact] = deriveCodec[Contact]
+  given codec: Codec[Contact] = deriveCodec[Contact]
 }
 
 case class Email(contact:Contact, content: String)
 object Email {
-  implicit val codec: Codec[Email] = deriveCodec[Email]
+  given codec: Codec[Email] = deriveCodec[Email]
 }
 
 case class DispatchPayload(stationId: Int, timeInSeconds: Int, notifications: Option[List[Contact]] = None)
 object DispatchPayload {
-  implicit val codec: Codec[DispatchPayload] = deriveCodec[DispatchPayload]
+  given codec: Codec[DispatchPayload] = deriveCodec[DispatchPayload]
 }
 
 class DispatchEndpoints(http: Client[IO], stationApiUrl: String) {
