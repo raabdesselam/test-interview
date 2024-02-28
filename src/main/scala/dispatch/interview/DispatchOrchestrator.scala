@@ -94,7 +94,6 @@ class DispatchEndpoints(http: Client[IO],
 
 object DispatchEndpoints extends IOApp.Simple {
 
-  var emailService:IEmailService = null
   override def run: IO[Unit] =
     (for {
       client <- EmberClientBuilder.default[IO].build
